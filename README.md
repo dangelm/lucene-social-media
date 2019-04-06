@@ -20,17 +20,17 @@ Usage
 -----
 
 In a Solr schema, you can analyze fields using the tokenizer and filter, for instance like this:
-```
-    <fieldType name="text_twitter" class="solr.TextField" positionIncrementGap="100" multiValued="true">
-      <analyzer type="index">
-        <tokenizer class="org.opentapioca.analysis.twitter.TwitterTokenizerFactory" />
-        <filter class="org.opentapioca.analysis.twitter.TwitterLowercaseFilterFactory" />
-      </analyzer>
-      <analyzer type="query">
-        <tokenizer class="org.opentapioca.analysis.twitter.TwitterTokenizerFactory" />
-        <filter class="org.opentapioca.analysis.twitter.TwitterLowercaseFilterFactory" />
-      </analyzer>
-    </fieldType>
+```xml
+<fieldType name="text_twitter" class="solr.TextField" positionIncrementGap="100" multiValued="true">
+  <analyzer type="index">
+    <tokenizer class="org.opentapioca.analysis.twitter.TwitterTokenizerFactory" />
+    <filter class="org.opentapioca.analysis.twitter.TwitterLowercaseFilterFactory" />
+  </analyzer>
+  <analyzer type="query">
+     <tokenizer class="org.opentapioca.analysis.twitter.TwitterTokenizerFactory" />
+     <filter class="org.opentapioca.analysis.twitter.TwitterLowercaseFilterFactory" />
+  </analyzer>
+</fieldType>
 ```
 
 Released under the Apache-2.0 license.

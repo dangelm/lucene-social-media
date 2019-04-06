@@ -1,7 +1,5 @@
-Lucene Twitter Tokenizer
+Lucene Twitter Tokenizer [![Build Status](https://travis-ci.org/wetneb/lucene-twitter.svg?branch=master)](https://travis-ci.org/wetneb/lucene-twitter)
 ========================
-
-[![Build Status](https://travis-ci.org/wetneb/lucene-twitter.svg?branch=master)](https://travis-ci.org/wetneb/lucene-twitter)
 
 This package provides a Lucene tokenizer and filter for Twitter data.
 * The `TwitterTokenizer` respects Twitter usernames and hashtags as single tokens (including

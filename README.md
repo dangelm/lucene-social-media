@@ -1,11 +1,13 @@
-Lucene Twitter Tokenizer [![Build Status](https://travis-ci.org/wetneb/lucene-twitter.svg?branch=master)](https://travis-ci.org/wetneb/lucene-twitter)
+Lucene Social media Tokenizer [![Build Status](https://travis-ci.org/wetneb/lucene-twitter.svg?branch=master)](https://travis-ci.org/wetneb/lucene-twitter)
 ========================
 
-This package provides a Lucene tokenizer and filter for Twitter data.
+This package provides a Lucene tokenizer and filter for social media data.
+This s a fork from [wetneb/lucene-twitter](https://github.com/wetneb/lucene-twitter).
+I have made the required changes to support Solr 9.4
 * The `TwitterTokenizer` respects Twitter usernames and hashtags as single tokens (including
   the `@` and `#` signs). It is based on Lucene's `ClassicTokenizer` and behaves identically
   otherwise.
-* The `TwitterLowercaseFilter` lowercases all Twitter usernames and hashtags, as they are
+* The `TwitterLowercaseFilter` lowercases all social media usernames and hashtags, as they are
   case-insensitive.
 
 Installing

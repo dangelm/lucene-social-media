@@ -1,4 +1,4 @@
-Lucene Social media Tokenizer [![Build Status](https://travis-ci.org/wetneb/lucene-twitter.svg?branch=master)](https://travis-ci.org/wetneb/lucene-twitter)
+Lucene Social media Tokenizer
 ========================
 
 This package provides a Lucene tokenizer and filter for social media data.

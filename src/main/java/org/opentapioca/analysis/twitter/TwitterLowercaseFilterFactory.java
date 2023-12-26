@@ -20,8 +20,8 @@ package org.opentapioca.analysis.twitter;
 import java.util.Map;
 
 import org.apache.lucene.analysis.TokenFilter;
+import org.apache.lucene.analysis.TokenFilterFactory;
 import org.apache.lucene.analysis.TokenStream;
-import org.apache.lucene.analysis.util.TokenFilterFactory;
 
 /**
  * Factory for {@link TwitterLowercaseFilter}.
@@ -34,7 +34,7 @@ import org.apache.lucene.analysis.util.TokenFilterFactory;
  * &lt;/fieldType&gt;</pre>
  */
 public class TwitterLowercaseFilterFactory extends TokenFilterFactory {
-  
+
   /** Creates a new ClassicFilterFactory */
   public TwitterLowercaseFilterFactory(Map<String,String> args) {
     super(args);
@@ -42,7 +42,7 @@ public class TwitterLowercaseFilterFactory extends TokenFilterFactory {
       throw new IllegalArgumentException("Unknown parameters: " + args);
     }
   }
-  
+
   @Override
   public TokenFilter create(TokenStream input) {
     return new TwitterLowercaseFilter(input);

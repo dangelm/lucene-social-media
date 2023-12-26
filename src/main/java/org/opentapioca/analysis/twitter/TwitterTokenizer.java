@@ -20,8 +20,9 @@ package org.opentapioca.analysis.twitter;
 import java.io.IOException;
 
 import org.apache.lucene.analysis.Tokenizer;
-import org.apache.lucene.analysis.standard.ClassicTokenizer;
+import org.apache.lucene.analysis.classic.ClassicTokenizer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.analysis.standard.StandardTokenizer;
 import org.apache.lucene.analysis.tokenattributes.OffsetAttribute;
 import org.apache.lucene.analysis.tokenattributes.PositionIncrementAttribute;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
@@ -68,19 +69,19 @@ public final class TwitterTokenizer extends Tokenizer {
 
   /** String token types that correspond to token type int constants */
   public static final String [] TOKEN_TYPES = new String [] {
-    ClassicTokenizer.TOKEN_TYPES[ALPHANUM],
-    ClassicTokenizer.TOKEN_TYPES[APOSTROPHE],
-    ClassicTokenizer.TOKEN_TYPES[ACRONYM],
-    ClassicTokenizer.TOKEN_TYPES[COMPANY],
-    ClassicTokenizer.TOKEN_TYPES[EMAIL],
-    ClassicTokenizer.TOKEN_TYPES[HOST],
-    ClassicTokenizer.TOKEN_TYPES[NUM],
-    ClassicTokenizer.TOKEN_TYPES[CJ],
-    ClassicTokenizer.TOKEN_TYPES[ACRONYM_DEP],
-    "TWITTER_USER",
-    "TWITTER_HASHTAG"
+          ClassicTokenizer.TOKEN_TYPES[ALPHANUM],
+          ClassicTokenizer.TOKEN_TYPES[APOSTROPHE],
+          ClassicTokenizer.TOKEN_TYPES[ACRONYM],
+          ClassicTokenizer.TOKEN_TYPES[COMPANY],
+          ClassicTokenizer.TOKEN_TYPES[EMAIL],
+          ClassicTokenizer.TOKEN_TYPES[HOST],
+          ClassicTokenizer.TOKEN_TYPES[NUM],
+          ClassicTokenizer.TOKEN_TYPES[CJ],
+          ClassicTokenizer.TOKEN_TYPES[ACRONYM_DEP],
+          "TWITTER_USER",
+          "TWITTER_HASHTAG"
   };
-  
+
   private int skippedPositions;
 
   private int maxTokenLength = StandardAnalyzer.DEFAULT_MAX_TOKEN_LENGTH;
@@ -110,7 +111,7 @@ public final class TwitterTokenizer extends Tokenizer {
   }
 
   /**
-   * Creates a new ClassicTokenizer with a given {@link org.apache.lucene.util.AttributeFactory} 
+   * Creates a new ClassicTokenizer with a given {@link org.apache.lucene.util.AttributeFactory}
    */
   public TwitterTokenizer(AttributeFactory factory) {
     super(factory);
@@ -164,7 +165,7 @@ public final class TwitterTokenizer extends Tokenizer {
         skippedPositions++;
     }
   }
-  
+
   @Override
   public final void end() throws IOException {
     super.end();
@@ -174,7 +175,7 @@ public final class TwitterTokenizer extends Tokenizer {
     // adjust any skipped tokens
     posIncrAtt.setPositionIncrement(posIncrAtt.getPositionIncrement()+skippedPositions);
   }
-  
+
   @Override
   public void close() throws IOException {
     super.close();

@@ -17,7 +17,7 @@ Installing
 ----------
 
 Create a `server/solr/lib` folder in your Solr install if it does not exist already,
-and download there [the .jar for this plugin](https://github.com/wetneb/lucene-twitter/releases/download/v0.0.1/lucene-twitter-0.0.1.jar).
+and download there [the .jar for this plugin](https://github.com/dangelm/lucene-social-media/blob/master/release/lucene-twitter-0.0.2.jar).
 
 Usage
 -----

@@ -2,8 +2,11 @@ Lucene Social media Tokenizer
 ========================
 
 This package provides a Lucene tokenizer and filter for social media data.
+
 This s a fork from [wetneb/lucene-twitter](https://github.com/wetneb/lucene-twitter).
+
 I have made the required changes to support Solr 9.4
+
 * The `TwitterTokenizer` respects Twitter usernames and hashtags as single tokens (including
   the `@` and `#` signs). It is based on Lucene's `ClassicTokenizer` and behaves identically
   otherwise.
